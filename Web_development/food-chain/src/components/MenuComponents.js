@@ -1,19 +1,11 @@
 import React,{Component} from 'react';
 import {Card,CardImg,CardImgOverlay,CardTitle,CardBody,CardText} from 'reactstrap';
-import Dishdetail from './DishdetailComponent';
 
 class Menu extends Component{
   
     constructor(props) {
         super(props);
 
-        this.state = {
-            selectedDish: null,
-        }
-    }
-
-    onDishSelect(dish) {
-        this.setState({ selectedDish: dish});
     }
 
     renderDish(dish) {
@@ -54,9 +46,6 @@ class Menu extends Component{
                 <div className="row">
                     {menu}
                 </div>
-                <div className="row">
-                   {this.state.selectedDish === null?<div></div>:<Dishdetail dish={this.state.selectedDish}  /> }
-                 </div>
             </div>
         );
     }
