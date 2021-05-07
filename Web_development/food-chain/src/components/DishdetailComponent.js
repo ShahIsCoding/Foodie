@@ -14,7 +14,6 @@ import {Card,CardImg,CardBody,CardText,CardTitle,Media} from 'reactstrap';
             </div>
         );
     }
-
     function RenderComments({comment}){
         const dishcomments=comment.map((comments) => {
             return(
@@ -27,7 +26,7 @@ import {Card,CardImg,CardBody,CardText,CardTitle,Media} from 'reactstrap';
                         </p>
                     </Media >
                 </Media>
-            );
+            );  
         });
         return(
             <Card>
