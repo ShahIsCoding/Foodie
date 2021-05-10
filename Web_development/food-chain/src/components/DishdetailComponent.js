@@ -218,7 +218,7 @@ class CommentForm extends Component {
                 <ul className='list-unstyled'>
                     {cmnts}
                 </ul>
-                <CommentForm dish={dish} comments={comments} />
+                <CommentForm />
             </div>
         )
     }
