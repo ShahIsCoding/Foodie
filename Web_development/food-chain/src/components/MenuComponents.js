@@ -5,7 +5,7 @@ import {Breadcrumb, BreadcrumbItem, Card,CardImg,CardImgOverlay,CardTitle} from 
     function RenderMenu ({dish}) {
         return(
             <Card>
-                <Link to={`/Menu/${dish.id}`}>
+                <Link to={`/menu/${dish.id}`}>
                     <CardImg width="100%" src={dish.image} alt={dish.name} />
                     <CardImgOverlay>
                         <CardTitle>{dish.name}</CardTitle>
@@ -29,7 +29,7 @@ import {Breadcrumb, BreadcrumbItem, Card,CardImg,CardImgOverlay,CardTitle} from 
             <div className="container">
                 <div className='row'>
                     <Breadcrumb>
-                        <BreadcrumbItem><Link to='/Home'>Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Menu</BreadcrumbItem>
                     </Breadcrumb>
                     <div className='col-12'>

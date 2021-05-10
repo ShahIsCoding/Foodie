@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
     // function RenderDish(props){}
     function RenderDish({dish}) {
-        if (dish != null) {
             return (
                 <div className="col-12 col-md-5 m-1">
                     <Card>
@@ -16,16 +15,10 @@ import { Link } from 'react-router-dom';
                     </Card>
                 </div>    
             );
-        } else {
-            return (
-                <div></div>
-            );
-        }
     }
 
     // function RenderComments(props){}
     function RenderComments({comments}) {
-        if (comments != null) {
             const cmnts = comments.map((commnts) => {
                 return (
                     <ul key={commnts.id} className="list-unstyled">
@@ -50,17 +43,11 @@ import { Link } from 'react-router-dom';
                     {cmnts}
                 </div>
             );  
-        // if comments is empty   \  
-        } else {
-            return (
-                <div></div>
-            );
-        }
     }
     
     const DishDetail = (props) => {
-        if (props.dish != null) {
-            return (
+        console.log(props.comments);    
+        return (
                 <div className="container">
                     <div className="row">
                         <Breadcrumb>
@@ -78,11 +65,6 @@ import { Link } from 'react-router-dom';
                     </div>    
                 </div>
             );
-        } else {
-            return (
-                <div></div>
-            );
         }
-    }
     
 export default DishDetail;
