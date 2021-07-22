@@ -1,15 +1,16 @@
-/* eslint-disable no-useless-constructor */
+import React, { Component } from 'react';
+
 import Home from './HomeComponent';
-import Menu from './MenuComponents';
+import Menu from './MenuComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import DishDetail from './DishdetailComponent';
+
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
-import React,{Component} from 'react';
-import { addComment } from '../redux/ActionCreater';
+
 
 const mapStateToProps = state => {
 
@@ -21,9 +22,6 @@ const mapStateToProps = state => {
     }
 }       
 
-const mapDispatchToProps = (dispatch) =>({
- addComment :(dishId,rating,author,comment) => dispatch(addComment(dishId,rating,author,comment))
-});
 
 class Main extends Component {
 
@@ -57,8 +55,7 @@ class Main extends Component {
                 <DishDetail 
                 
                 dish={this.props.dishes.filter( (dish) => dish.id === parseInt(match.params.dishId, 10))[0] } 
-                comments={this.props.comments.filter( (comment) => comment.dishId === parseInt(match.params.dishId, 10)) }
-                addComment={this.props.addComment} 
+                comments={this.props.comments.filter( (comment) => comment.dishId === parseInt(match.params.dishId, 10)) } 
                 
                 
                 />
@@ -69,7 +66,7 @@ class Main extends Component {
 
         return (
             <div>
-                <Header/>
+                <Header></Header>
 
                 <Switch>
                     <Route path="/home" component={ HomePage } />
@@ -84,7 +81,7 @@ class Main extends Component {
                     <Redirect to="/home" />
                 </Switch>
 
-                <Footer/>
+                <Footer></Footer>
             </div> 
         );
 
@@ -92,4 +89,11 @@ class Main extends Component {
 
 }
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main));
+
+
+/**
+ * 
+ * - connect(): generates a wrapper container component that 
+ *      subscribe to the store.
+ */
